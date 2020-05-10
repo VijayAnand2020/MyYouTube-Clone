@@ -1,0 +1,29 @@
+{% extends 'home/search.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h2 style="text-align: center;text-transform: capitalize;color: white;">{{ search|title }}</h2>
+    <div class="row">
+        {% for info in complete_information %}
+            <div class="col s12">
+                <div class="card" style="background-image: url('{% static 'bg.jpg' %}');background-repeat:no-repeat;background-size: 100% 100%;">
+                    <div class="card-image">
+                        <a href="{{ info.3 }}"  target="_blank"><img src="{{ info.2 }}" alt=""></a>
+                    </div>
+                    <div class="card-content" id="content" style="color:white;">
+                        <p style="font-weight: bold;">
+                            {{ info.0 }}
+                        </p>
+                        </br>
+                        <p style="font-weight: bold;line-height:22px;text-decoration:underline;">Description:</p>
+                        <p style="font-weight:lighter;line-height:22px;">{{ info.1 }}</p>
+                        </br>
+                        <span style="display:block;line-height:2px;font-weight:bold;">Channel Name: {{ info.4 }}</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock content %}
