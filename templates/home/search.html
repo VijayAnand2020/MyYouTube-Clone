@@ -1,0 +1,156 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <title>MyYouTube</title>
+  <link rel = "icon" type = "image/png" href = "{% static 'title_icon.png' %}">
+  <style>
+    #alink:hover{
+        color: #000;
+        background: #fff
+    }
+
+    #alink{
+        padding: 0px 15px;
+        margin: 0px 0px;
+    }
+
+    #alink:active{
+        background:#fff;
+    }
+
+    .textcolor{
+      color:#ffffff !important;
+    }
+
+
+    .navbar {
+        margin-left: 5px;
+        margin-bottom: 10px;
+        Padding: 0 !important;
+        Margin: 0!important;
+    }
+
+    #mylogo{
+        margin-left: 10px;
+    }
+
+    input::-webkit-input-placeholder {
+        color: #fff !important;
+    }
+        
+    input:-moz-placeholder { /* Firefox 18- */
+        color: #fff !important;  
+    }
+        
+    input::-moz-placeholder {  /* Firefox 19+ */
+        color: #fff !important;  
+    }
+        
+    input:-ms-input-placeholder {  
+        color: #fff !important;  
+    }
+
+    .aboutpara{
+        color: white;
+        font-weight: lighter;
+        word-spacing: 2px;
+    }
+
+    .card {
+        margin: 10px;
+        height: 450px;
+        width: 400px;
+        overflow: hidden;
+    }
+
+    .card-image {
+        min-height:200px;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom:-25px;
+    }
+
+    .card .card-image img {
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    }
+
+    #content {
+        padding-left: 10px;
+        margin-top: 13px;
+    }
+  </style>
+</head>
+
+<body style="background-image: url('{% static 'black_thread.png' %}')">
+  <div class="maindiv">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/" id="mylogo">MyYouTube</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" id="alink" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="alink" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="alink" href="{% url 'search' %}">Search</a>
+          </li>
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.youtube.com"><img src="{% static 'logo.png' %}" height="75" width="100" alt="Youtube logo"></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      </br>
+      </br>
+      </br>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <h2 style="text-align: center;color:white;">What do you want to search for on MyYouTube?</h2>
+        <form action="{% url 'new_search' %}" method="POST">
+          {% csrf_token %}
+          {{ form }}
+          <input type="text" name="search" placeholder="Search MyYouTube..." style="color: aliceblue;" >
+          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </form>      
+    </div>
+
+    {% block content %}
+
+    {% endblock content %}
+  </div>
+</body>
+
+</html>

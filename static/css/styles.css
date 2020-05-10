@@ -1,0 +1,82 @@
+#alink:hover{
+    color: #000;
+    background: #fff
+}
+#alink{
+    padding: 0px 15px;
+    margin: 0px 0px;
+}
+
+#alink:active{
+    background:#fff;
+}
+.textcolor{
+  color:#ffffff !important;
+}
+
+
+.navbar {
+    margin-left: 5px;
+    margin-bottom: 10px;
+    Padding: 0 !important;
+    Margin: 0!important;
+}
+
+#mylogo{
+    margin-left: 10px;
+}
+
+input::-webkit-input-placeholder {
+    color: #fff !important;
+}
+     
+input:-moz-placeholder { /* Firefox 18- */
+    color: #fff !important;  
+}
+     
+input::-moz-placeholder {  /* Firefox 19+ */
+    color: #fff !important;  
+}
+     
+input:-ms-input-placeholder {  
+    color: #fff !important;  
+}
+
+.aboutpara{
+    color: white;
+    font-weight: lighter;
+    word-spacing: 2px;
+}
+
+.card {
+    margin: 10px;
+    height: 450px;
+    width: 400px;
+    overflow: hidden;
+}
+
+.card-image {
+    max-height:150px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom:-25px;
+}
+
+.card .card-image img{
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 25px;
+    margin-top: -25px;
+    height: 200px;
+}
+
+#content {
+    padding-left: 10px;
+    margin-top: 13px;
+}
