@@ -5,7 +5,7 @@ from . import models
 
 # Create your views here.
 API_KEY = os.environ.get('api')
-BASE_VIDEO_API_URL = "https://www.googleapis.com/youtube/v3/search?&part=snippet&maxResults=50&q={}&key={API_KEY}"
+BASE_VIDEO_API_URL = "https://www.googleapis.com/youtube/v3/search?&part=snippet&maxResults=50&q={}&key=%s"%API_KEY
 
 
 def index(request):
