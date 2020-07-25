@@ -1,4 +1,4 @@
-import json
+import json,os
 import requests
 from django.shortcuts import render
 from . import models
