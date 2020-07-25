@@ -4,7 +4,8 @@ from django.shortcuts import render
 from . import models
 
 # Create your views here.
-BASE_VIDEO_API_URL = "https://www.googleapis.com/youtube/v3/search?&part=snippet&maxResults=50&q={}&key=AIzaSyAUwMxTAvyFcE92GTbmJtAYHaefpkn2E1w"
+API_KEY = os.environ.get('api')
+BASE_VIDEO_API_URL = "https://www.googleapis.com/youtube/v3/search?&part=snippet&maxResults=50&q={}&key={API_KEY}"
 
 
 def index(request):
